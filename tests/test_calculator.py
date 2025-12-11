@@ -113,15 +113,60 @@ class TestSubtraction:
 
     def test_subtract_positive_numbers(self):
         """Test subtracting positive numbers."""
-        # TODO: Implement
+        calc = Calculator()
+        a = 10
+        b = 3
+        expected = 7
+        result = calc.subtract(a, b)
+        assert result == expected
 
+    def test_subtract_negative_numbers(self):
+        """Test subtracting negative numbers."""
+        calc = Calculator()
+        a = -5
+        b = -3
+        expected = -2
+        result = calc.subtract(a, b)
+        assert result == expected
+
+    def test_subtract_mixed_numbers(self):
+        """Test subtracting mixed numbers."""
+        calc = Calculator()
+        a = 5
+        b = -3
+        expected = 8
+        result = calc.subtract(a, b)
+        assert result == expected
 
 class TestMultiplication:
     """Tests for the multiply method."""
 
     def test_multiply_positive_numbers(self):
         """Test multiplying positive numbers."""
-        # TODO: Implement
+        calc = Calculator()
+        a = 4
+        b = 5
+        expected = 20
+        result = calc.multiply(a, b)
+        assert result == expected
+
+    def test_multiply_with_zero(self):
+        """Test multiplying with zero."""
+        calc = Calculator()
+        a = 4
+        b = 0
+        expected = 0
+        result = calc.multiply(a, b)
+        assert result == expected
+
+    def test_multiply_negative_numbers(self):
+        """Test multiplying negative numbers."""
+        calc = Calculator()
+        a = -4
+        b = -3
+        expected = 12
+        result = calc.multiply(a, b)
+        assert result == expected
 
 
 class TestDivision:
@@ -129,7 +174,24 @@ class TestDivision:
 
     def test_divide_positive_numbers(self):
         """Test dividing positive numbers."""
-        # TODO: Implement
+        calc = Calculator()
+        a = 10
+        b = 2
+        expected = 5
+        result = calc.divide(a, b)
+        assert result == expected
 
+    def test_divide_negative_numbers(self):
+        """Test dividing negative numbers."""
+        calc = Calculator()
+        a = 10
+        b = -2
+        expected = -5
+        result = calc.divide(a, b)
+        assert result == expected
 
-
+    def test_divide_by_zero(self):
+        """Test dividing by zero to raise error."""
+        calc = Calculator()
+        with pytest.raises(ValueError):
+            calc.divide(10, 0)
